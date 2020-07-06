@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import com.facundoaramayo.meliuiandroid.R
+import com.facundoaramayo.meliuiandroid.databinding.ProductDetailFragmentBinding
 import com.facundoaramayo.meliuiandroid.modules.product.viewmodel.ProductDetailViewModel
 
 class ProductDetailFragment : Fragment() {
 
     private lateinit var viewModel: ProductDetailViewModel
+
+    private lateinit var binding: ProductDetailFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,10 +22,10 @@ class ProductDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onActivityCreated(savedInstanceState)
+        binding = ProductDetailFragmentBinding.inflate(inflater, container, false)
         viewModel =
             ViewModelProviders.of(this).get(ProductDetailViewModel::class.java)
-        val root = inflater.inflate(R.layout.product_detail_fragment, container, false)
 
-        return root
+        return binding.root
     }
 }
