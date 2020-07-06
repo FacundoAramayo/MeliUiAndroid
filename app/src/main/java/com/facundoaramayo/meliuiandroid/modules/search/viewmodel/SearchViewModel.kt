@@ -1,13 +1,19 @@
 package com.facundoaramayo.meliuiandroid.modules.search.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.facundoaramayo.meliuiandroid.modules.product.model.ProductResponseModel
+import com.facundoaramayo.meliuiandroid.modules.search.repository.SearchRepository
+import retrofit2.Response
 
 class SearchViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is search Fragment"
+    val respository: SearchRepository = SearchRepository()
+
+    suspend fun getResults(query: String) : Response<ProductResponseModel> {
+        return respository.getResults(query)
     }
-    val text: LiveData<String> = _text
+
+
+
+
 }
