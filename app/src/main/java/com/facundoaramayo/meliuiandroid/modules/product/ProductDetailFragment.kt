@@ -1,4 +1,4 @@
-package com.facundoaramayo.meliuiandroid.ui.product
+package com.facundoaramayo.meliuiandroid.modules.product
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -8,8 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.facundoaramayo.meliuiandroid.R
+import com.facundoaramayo.meliuiandroid.modules.product.viewmodel.ProductDetailViewModel
 
-class ProductDetail : Fragment() {
+class ProductDetailFragment : Fragment() {
 
     private lateinit var viewModel: ProductDetailViewModel
 

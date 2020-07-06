@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.facundoaramayo.meliuiandroid.ui.home.HomeFragment"
+        android:name="com.facundoaramayo.meliuiandroid.modules.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.facundoaramayo.meliuiandroid.ui.search.SearchFragment"
+        android:name="com.facundoaramayo.meliuiandroid.modules.search.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.facundoaramayo.meliuiandroid.ui.notifications.NotificationsFragment"
+        android:name="com.facundoaramayo.meliuiandroid.modules.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

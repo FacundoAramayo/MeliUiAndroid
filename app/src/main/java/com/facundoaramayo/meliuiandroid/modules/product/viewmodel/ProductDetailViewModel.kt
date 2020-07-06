@@ -1,4 +1,4 @@
-package com.facundoaramayo.meliuiandroid.ui.product
+package com.facundoaramayo.meliuiandroid.modules.product.viewmodel
 
 import androidx.lifecycle.ViewModel
 

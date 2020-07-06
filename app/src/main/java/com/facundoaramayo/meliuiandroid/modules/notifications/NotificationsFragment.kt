@@ -1,4 +1,4 @@
-package com.facundoaramayo.meliuiandroid.ui.notifications
+package com.facundoaramayo.meliuiandroid.modules.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

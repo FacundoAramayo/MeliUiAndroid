@@ -1,13 +1,13 @@
-package com.facundoaramayo.meliuiandroid.ui.home
+package com.facundoaramayo.meliuiandroid.modules.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class NotificationsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "//TODO :)"
     }
     val text: LiveData<String> = _text
 }
