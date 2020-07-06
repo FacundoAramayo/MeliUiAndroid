@@ -4,19 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ui_meli_background"
     tools:context=".ui.search.SearchFragment">
 
-    <TextView
-        android:id="@+id/text_search"
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_margin"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/activity_vertical_margin"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/activity_vertical_margin"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/activity_horizontal_margin"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/activity_horizontal_margin"/>
+
+    <LinearLayout
+        android:id="@+id/lyt_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/ui_meli_white"
+        android:padding="@dimen/ui_linespacing_large"
+        app:layout_constraintTop_toTopOf="@id/top_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintEnd_toEndOf="@id/end_margin">
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ui_textFieldHint="Escribe aquí tu búsqueda"
+            app:ui_textFieldLabel="Buscar"
+            app:ui_textFieldLabelColor="@color/colorAccent"
+            app:ui_textFieldMaxCharacters="30"
+            app:ui_textFieldMaxLines="3"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyt_results"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/ui_meli_white"
+        android:padding="@dimen/ui_linespacing_large"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/lyt_search"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintEnd_toEndOf="@id/end_margin">
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
