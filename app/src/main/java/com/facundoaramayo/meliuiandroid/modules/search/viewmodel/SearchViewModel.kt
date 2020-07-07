@@ -14,7 +14,7 @@ import retrofit2.Response
 
 class SearchViewModel : ViewModel() {
 
-    val respository: SearchRepository = SearchRepository()
+    private val respository: SearchRepository = SearchRepository()
 
     suspend fun getResults(query: String) : Response<ProductResponseModel> {
         return respository.getResults(query)

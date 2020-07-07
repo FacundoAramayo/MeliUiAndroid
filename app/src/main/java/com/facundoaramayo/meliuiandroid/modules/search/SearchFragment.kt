@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facundoaramayo.meliuiandroid.databinding.FragmentSearchBinding
@@ -26,6 +27,8 @@ class SearchFragment : Fragment(), BindableProductResultView.ProductClickListene
 
     private lateinit var binding: FragmentSearchBinding
 
+    private val args: SearchFragmentArgs by navArgs()
+
     private val productResultsAdapter by lazy { GroupAdapter<GroupieViewHolder>() }
 
     override fun onCreateView(
@@ -38,6 +41,11 @@ class SearchFragment : Fragment(), BindableProductResultView.ProductClickListene
                 ViewModelProviders.of(this).get(SearchViewModel::class.java)
 
         initUI()
+
+        val searchArgs = args.search
+        searchArgs?.let {
+            performSearch(it)
+        }
 
         return binding.root
     }

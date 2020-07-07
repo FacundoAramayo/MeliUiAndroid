@@ -46,6 +46,7 @@
         app:layout_constraintEnd_toEndOf="@id/end_margin">
 
         <com.mercadolibre.android.ui.widgets.TextField
+            android:id="@+id/textField_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:ui_textFieldHint="Escribe aquí tu búsqueda"
