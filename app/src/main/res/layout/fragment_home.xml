@@ -58,16 +58,23 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/lyt_featured"
+        android:id="@+id/lyt_free_shipping"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:background="@color/ui_meli_white"
         android:padding="@dimen/ui_linespacing_large"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/lyt_search"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_margin"
         app:layout_constraintStart_toStartOf="@id/start_margin"
-        app:layout_constraintEnd_toEndOf="@id/end_margin">
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        tools:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_free_shipping"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 

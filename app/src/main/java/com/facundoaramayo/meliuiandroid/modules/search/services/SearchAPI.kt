@@ -18,4 +18,13 @@ interface SearchAPI {
         @Query("q") query: String
     ) : Response<ProductResponseModel>
 
+    @Headers(CACHE, AGENT)
+    @GET("sites/{site_id}/search")
+    suspend fun getFreeShipping(
+        @Path(value = "site_id") siteId: String,
+        @Query("shipping") shippingType: String,
+        @Query("q") query: String
+    ) : Response<ProductResponseModel>
+
+
 }
