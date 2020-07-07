@@ -68,6 +68,14 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     implementation 'com.google.code.gson:gson:2.8.5'
 
+    //Groupie
+    implementation "com.xwray:groupie:$groupie_version"
+    implementation "com.xwray:groupie-kotlin-android-extensions:$groupie_version"
+    implementation "com.xwray:groupie-viewbinding:$groupie_version"
+
+    //Picasso
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+
     //Test Libraries
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

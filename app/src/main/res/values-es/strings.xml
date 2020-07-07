@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MeliUiAndroid</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_search">Buscar</string>
+    <string name="title_notifications">Notificaciones</string>
+    <string name="condition_used">Usado</string>
+    <string name="condition_new">Nuevo</string>
+    <string name="quantity_available">Disponible: %s</string>
+    <string name="free_shipping">Envío gratis</string>
+    <string name="original_price"><strike>%s</strike></string>
+    <string name="accepts_mercadopago">Acepta MercadoPago</string>
+</resources>

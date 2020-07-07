@@ -3,4 +3,14 @@
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
     <string name="title_notifications">Notifications</string>
+
+
+    <!--Product description-->
+    <string name="condition_used">Used</string>
+    <string name="condition_new">New</string>
+    <string name="quantity_available">Available: %s</string>
+    <string name="free_shipping">Free shipping</string>
+    <string name="original_price"><strike>%s</strike></string>
+    <string name="accepts_mercadopago">Accepts MercadoPago</string>
+
 </resources>
