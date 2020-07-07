@@ -1,11 +1,13 @@
 package com.facundoaramayo.meliuiandroid.modules.search
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
@@ -77,7 +79,8 @@ class SearchFragment : Fragment(), BindableProductResultView.ProductClickListene
     }
 
     private fun performSearch(query: String) {
-
+        binding.textFieldSearch.clearFocus()
+        hideKeyboard()
         GlobalScope.launch(Dispatchers.Main) {
             val items = searchViewModel.getResults(query).body()?.results
 
@@ -93,5 +96,10 @@ class SearchFragment : Fragment(), BindableProductResultView.ProductClickListene
 
     override fun onClickProduct(product: ProductModel) {
         product.id?.let { searchViewModel.openProductById(activity, it) }
+    }
+
+    private fun hideKeyboard() {
+        val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+        inputMethodManager?.hideSoftInputFromWindow(binding.textFieldSearch.windowToken, 0)
     }
 }

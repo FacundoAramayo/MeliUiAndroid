@@ -1,11 +1,13 @@
 package com.facundoaramayo.meliuiandroid.modules.home
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
@@ -55,6 +57,7 @@ class HomeFragment : Fragment(), BindableFeaturedHomeProductView.ProductClickLis
                         val action = HomeFragmentDirections.actionNavigationHomeToNavigationSearch()
                         action.search = view.text.toString()
                         if (view.text.toString() != EMPTY_STRING) {
+                            hideKeyboard()
                             findNavController().navigate(action)
                         }
                         true
@@ -87,6 +90,11 @@ class HomeFragment : Fragment(), BindableFeaturedHomeProductView.ProductClickLis
             Log.d("LOG-", "items: $items")
         }
 
+    }
+
+    private fun hideKeyboard() {
+        val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+        inputMethodManager?.hideSoftInputFromWindow(binding.textFieldSearch.windowToken, 0)
     }
 
     override fun onClickProduct(product: ProductModel) {
