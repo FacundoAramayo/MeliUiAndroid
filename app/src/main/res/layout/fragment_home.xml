@@ -57,93 +57,100 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/lyt_free_shipping"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/ui_meli_white"
-        android:padding="@dimen/ui_linespacing_large"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:visibility="gone"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/lyt_search"
+    <ScrollView
+        android:layout_width="@dimen/spacing_empty"
+        android:layout_height="@dimen/spacing_empty"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_search"
         app:layout_constraintBottom_toBottomOf="@id/bottom_margin"
         app:layout_constraintStart_toStartOf="@id/start_margin"
-        app:layout_constraintEnd_toEndOf="@id/end_margin"
-        tools:visibility="visible">
+        app:layout_constraintEnd_toEndOf="@id/end_margin">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/quick_access"
-            android:textSize="@dimen/ui_fontsize_large"
-            android:layout_marginStart="@dimen/spacing_xsmall"
-            android:layout_marginEnd="@dimen/spacing_xsmall"
-            android:layout_marginTop="@dimen/spacing_xsmall"
-            android:textAppearance="@style/MLFont.Regular"/>
-
-        <HorizontalScrollView
+        <LinearLayout
+            android:id="@+id/lyt_free_shipping"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/ui_meli_white"
+            android:padding="@dimen/ui_linespacing_large"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:visibility="gone"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium"
-                android:layout_marginBottom="@dimen/spacing_medium"
-                android:orientation="horizontal">
+                android:text="@string/quick_access"
+                android:textSize="@dimen/ui_fontsize_large"
+                android:layout_marginStart="@dimen/spacing_xsmall"
+                android:layout_marginEnd="@dimen/spacing_xsmall"
+                android:layout_marginTop="@dimen/spacing_xsmall"
+                android:textAppearance="@style/MLFont.Regular"/>
 
-                <com.mercadolibre.android.ui.widgets.MeliButton
-                    android:id="@+id/button_recommendation_shoes"
-                    android:layout_margin="@dimen/spacing_small"
-                    android:padding="@dimen/spacing_small"
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <com.mercadolibre.android.ui.widgets.MeliButton
-                    android:id="@+id/button_recommendation_laptops"
-                    android:layout_margin="@dimen/spacing_small"
-                    android:padding="@dimen/spacing_small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <com.mercadolibre.android.ui.widgets.MeliButton
-                    android:id="@+id/button_recommendation_freezer"
-                    android:layout_margin="@dimen/spacing_small"
-                    android:padding="@dimen/spacing_small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <com.mercadolibre.android.ui.widgets.MeliButton
-                    android:id="@+id/button_recommendation_kitchen"
-                    android:layout_margin="@dimen/spacing_small"
-                    android:padding="@dimen/spacing_small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <com.mercadolibre.android.ui.widgets.MeliButton
-                    android:id="@+id/button_recommendation_motorcycle"
-                    android:layout_margin="@dimen/spacing_small"
-                    android:padding="@dimen/spacing_small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <com.mercadolibre.android.ui.widgets.MeliButton
-                    android:id="@+id/button_recommendation_apartment"
-                    android:layout_margin="@dimen/spacing_small"
-                    android:padding="@dimen/spacing_small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <com.mercadolibre.android.ui.widgets.MeliButton
+                        android:id="@+id/button_recommendation_shoes"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.mercadolibre.android.ui.widgets.MeliButton
+                        android:id="@+id/button_recommendation_laptops"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.mercadolibre.android.ui.widgets.MeliButton
+                        android:id="@+id/button_recommendation_freezer"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.mercadolibre.android.ui.widgets.MeliButton
+                        android:id="@+id/button_recommendation_kitchen"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.mercadolibre.android.ui.widgets.MeliButton
+                        android:id="@+id/button_recommendation_motorcycle"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.mercadolibre.android.ui.widgets.MeliButton
+                        android:id="@+id/button_recommendation_apartment"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-        </HorizontalScrollView>
+                </LinearLayout>
+
+            </HorizontalScrollView>
 
 
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_free_shipping"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/spacing_xsmall"
-            android:layout_marginEnd="@dimen/spacing_xsmall"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_free_shipping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xsmall"
+                android:layout_marginEnd="@dimen/spacing_xsmall"/>
 
-    </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
