@@ -15,5 +15,6 @@
     <string name="original_price"><strike>%s</strike></string>
     <string name="accepts_mercadopago">Accepts MercadoPago</string>
     <string name="open_in_app">Open in app</string>
+    <string name="quick_access">Quick Access</string>
 
 </resources>

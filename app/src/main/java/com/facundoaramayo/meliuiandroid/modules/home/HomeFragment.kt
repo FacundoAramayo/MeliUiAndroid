@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facundoaramayo.meliuiandroid.base.EMPTY_STRING
+import com.facundoaramayo.meliuiandroid.base.QuickSearch
 import com.facundoaramayo.meliuiandroid.databinding.FragmentHomeBinding
 import com.facundoaramayo.meliuiandroid.modules.home.viewmodel.HomeViewModel
 import com.facundoaramayo.meliuiandroid.modules.product.model.ProductModel
@@ -63,8 +64,40 @@ class HomeFragment : Fragment(), BindableFeaturedHomeProductView.ProductClickLis
                     else -> false
                 }
             }
+
+            binding.apply {
+                buttonRecommendationShoes.text = QuickSearch.SHOES.value
+                buttonRecommendationShoes.setOnClickListener {
+                    showFreeShippingProducts(QuickSearch.SHOES.value)
+                }
+
+                buttonRecommendationLaptops.text = QuickSearch.LAPTOPS.value
+                buttonRecommendationLaptops.setOnClickListener {
+                    showFreeShippingProducts(QuickSearch.LAPTOPS.value)
+                }
+
+                buttonRecommendationFreezer.text = QuickSearch.FREEZER.value
+                buttonRecommendationFreezer.setOnClickListener {
+                    showFreeShippingProducts(QuickSearch.FREEZER.value)
+                }
+
+                buttonRecommendationKitchen.text = QuickSearch.KITCHEN.value
+                buttonRecommendationKitchen.setOnClickListener {
+                    showFreeShippingProducts(QuickSearch.KITCHEN.value)
+                }
+
+                buttonRecommendationMotorcycle.text = QuickSearch.MOTORCYCLE.value
+                buttonRecommendationMotorcycle.setOnClickListener {
+                    showFreeShippingProducts(QuickSearch.MOTORCYCLE.value)
+                }
+
+                buttonRecommendationApartment.text = QuickSearch.APARTMENT.value
+                buttonRecommendationApartment.setOnClickListener {
+                    showFreeShippingProducts(QuickSearch.APARTMENT.value)
+                }
+            }
         }
-        showFreeShippingProducts("zapatillas")
+        showFreeShippingProducts(QuickSearch.SHOES.value)
     }
 
     private fun initRecyclerView() {
