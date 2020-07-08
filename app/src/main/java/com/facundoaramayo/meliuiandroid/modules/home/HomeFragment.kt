@@ -2,7 +2,6 @@ package com.facundoaramayo.meliuiandroid.modules.home
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,6 @@ import com.facundoaramayo.meliuiandroid.databinding.FragmentHomeBinding
 import com.facundoaramayo.meliuiandroid.modules.home.viewmodel.HomeViewModel
 import com.facundoaramayo.meliuiandroid.modules.product.model.ProductModel
 import com.facundoaramayo.meliuiandroid.modules.product.view.BindableFeaturedHomeProductView
-import com.facundoaramayo.meliuiandroid.modules.product.view.BindableProductResultView
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import kotlinx.coroutines.Dispatchers
@@ -84,10 +82,8 @@ class HomeFragment : Fragment(), BindableFeaturedHomeProductView.ProductClickLis
 
             items?.let {
                 binding.lytFreeShipping.visibility = View.VISIBLE
-                freeShippingProductsAdapter.update(items.map { BindableFeaturedHomeProductView(it, this@HomeFragment, homeViewModel, resources) })
+                freeShippingProductsAdapter.update(items.map { BindableFeaturedHomeProductView(it, this@HomeFragment, resources) })
             }
-
-            Log.d("LOG-", "items: $items")
         }
 
     }
@@ -98,7 +94,14 @@ class HomeFragment : Fragment(), BindableFeaturedHomeProductView.ProductClickLis
     }
 
     override fun onClickProduct(product: ProductModel) {
-        //TODO
+        val action = HomeFragmentDirections.actionNavigationHomeToProductDetailFragment()
+        action.product = product
+        action.source = TAG
+        findNavController().navigate(action)
+    }
+
+    companion object {
+        const val TAG = "Home"
     }
 
 }

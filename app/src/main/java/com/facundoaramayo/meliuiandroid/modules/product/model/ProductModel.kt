@@ -1,6 +1,7 @@
 package com.facundoaramayo.meliuiandroid.modules.product.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ProductModel(
     @SerializedName("id") val id: String?,
@@ -14,7 +15,7 @@ data class ProductModel(
     @SerializedName("thumbnail") val thumbnail: String?,
     @SerializedName("accepts_mercadopago") val acceptMercadopago: Boolean?,
     @SerializedName("original_price") val originalPrice: Double?
-)
+) : Serializable
 
 data class Shipping(
     @SerializedName("free_shipping") val freeShipping: Boolean?,

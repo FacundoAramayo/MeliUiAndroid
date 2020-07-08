@@ -42,5 +42,22 @@
         android:id="@+id/productDetailFragment"
         android:name="com.facundoaramayo.meliuiandroid.modules.product.ProductDetailFragment"
         android:label="product_detail_fragment"
-        tools:layout="@layout/product_detail_fragment" />
+        tools:layout="@layout/product_detail_fragment" >
+        <argument
+            android:name="product"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="com.facundoaramayo.meliuiandroid.modules.product.model.ProductModel" />
+        <argument
+            android:name="source"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_navigation_search"
+            app:destination="@id/navigation_search" />
+    </fragment>
 </navigation>

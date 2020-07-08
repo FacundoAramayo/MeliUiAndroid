@@ -6,6 +6,7 @@ import android.view.View
 import com.facundoaramayo.meliuiandroid.R
 import com.facundoaramayo.meliuiandroid.baseui.setImageUrl
 import com.facundoaramayo.meliuiandroid.databinding.ItemResultProductBinding
+import com.facundoaramayo.meliuiandroid.modules.product.ProductItemBuilder
 import com.facundoaramayo.meliuiandroid.modules.product.model.ProductModel
 import com.facundoaramayo.meliuiandroid.modules.search.viewmodel.SearchViewModel
 import com.xwray.groupie.viewbinding.BindableItem
@@ -13,8 +14,9 @@ import com.xwray.groupie.viewbinding.BindableItem
 class BindableProductResultView(
     private val product: ProductModel,
     private val listener: ProductClickListener,
-    private val viewModel: SearchViewModel,
     private val resources: Resources) : BindableItem<ItemResultProductBinding>() {
+
+    private val productBuilder = ProductItemBuilder.instance
 
     override fun getLayout(): Int = R.layout.item_result_product
 
@@ -27,11 +29,15 @@ class BindableProductResultView(
             viewBinding.apply {
                 imageView.setImageUrl(thumbnail.orEmpty())
                 textViewTitle.text = title.orEmpty()
-                textViewShortDesc.text = viewModel.getDescriptionData(product, resources)
-                textViewPrice.text = viewModel.getFormattedPrice(product.currencyId, product.price)
-                textViewOriginalPrice.text = viewModel.getOriginalPriceData(product)
+                textViewShortDesc.text = productBuilder.getDescriptionData(product, resources)
+                textViewPrice.text = productBuilder.getFormattedPrice(product.currencyId, product.price)
+                textViewOriginalPrice.text = productBuilder.getOriginalPriceData(product)
                 textViewOriginalPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 textViewMercadoPago.visibility = if (acceptMercadopago == true) View.VISIBLE else View.GONE
+
+                root.setOnClickListener {
+                    listener.onClickProduct(this@run)
+                }
             }
         }
     }

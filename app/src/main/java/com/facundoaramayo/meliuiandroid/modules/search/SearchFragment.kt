@@ -10,10 +10,12 @@ import android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facundoaramayo.meliuiandroid.databinding.FragmentSearchBinding
+import com.facundoaramayo.meliuiandroid.modules.home.HomeFragmentDirections
 import com.facundoaramayo.meliuiandroid.modules.product.model.ProductModel
 import com.facundoaramayo.meliuiandroid.modules.product.view.BindableProductResultView
 import com.facundoaramayo.meliuiandroid.modules.search.viewmodel.SearchViewModel
@@ -86,7 +88,7 @@ class SearchFragment : Fragment(), BindableProductResultView.ProductClickListene
 
             items?.let {
                 binding.lytResults.visibility = View.VISIBLE
-                productResultsAdapter.update(items.map { BindableProductResultView(it, this@SearchFragment, searchViewModel, resources)})
+                productResultsAdapter.update(items.map { BindableProductResultView(it, this@SearchFragment, resources)})
             }
 
             Log.d("LOG-", "items: $items")
@@ -95,11 +97,18 @@ class SearchFragment : Fragment(), BindableProductResultView.ProductClickListene
     }
 
     override fun onClickProduct(product: ProductModel) {
-        product.id?.let { searchViewModel.openProductById(activity, it) }
+        val action = SearchFragmentDirections.actionNavigationSearchToProductDetailFragment()
+        action.product = product
+        action.source = TAG
+        findNavController().navigate(action)
     }
 
     private fun hideKeyboard() {
         val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
         inputMethodManager?.hideSoftInputFromWindow(binding.textFieldSearch.windowToken, 0)
+    }
+
+    companion object {
+        const val TAG = "Search"
     }
 }

@@ -5,9 +5,90 @@
     android:layout_height="match_parent"
     tools:context=".modules.product.ProductDetailFragment">
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/ui_linespacing_large">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/ui_linespacing_xxlarge">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:padding="@dimen/ui_linespacing_large"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ui_linespacing_large"
+                android:layout_marginStart="@dimen/ui_linespacing_large"
+                android:layout_marginEnd="@dimen/ui_linespacing_large"
+                tools:text="Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textViewShortDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ui_linespacing_large"
+                android:layout_marginEnd="@dimen/ui_linespacing_large"
+                android:layout_marginTop="@dimen/ui_linespacing_large"
+                tools:text="13.3 Inch, 256 GB"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:id="@+id/textViewMercadoPago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ui_linespacing_large"
+                android:layout_marginTop="@dimen/ui_linespacing_large"
+                android:background="@color/colorAccent"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/ui_linespacing_large"
+                android:paddingRight="@dimen/ui_linespacing_large"
+                android:text="@string/accepts_mercadopago"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat"
+                android:textColor="@color/ui_meli_white"
+                tools:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/textViewPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ui_linespacing_large"
+                android:layout_marginEnd="@dimen/ui_linespacing_large"
+                android:layout_marginTop="@dimen/ui_linespacing_large"
+                android:layout_gravity="end"
+                tools:text="USD 56990"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewOriginalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/ui_linespacing_large"
+                android:layout_marginEnd="@dimen/ui_linespacing_large"
+                android:layout_marginTop="@dimen/ui_linespacing_large"
+                tools:text="USD 60000"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
 
 </FrameLayout>
