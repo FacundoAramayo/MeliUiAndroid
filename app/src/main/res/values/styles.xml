@@ -9,4 +9,24 @@
         <item name="textColor">@color/ui_textfield_text_color</item>
     </style>
 
+    <style name="MLFont.Black">
+        <item name="fontFamily">@font/lato_black</item>
+    </style>
+
+    <style name="MLFont.Bold">
+        <item name="fontFamily">@font/lato_bold</item>
+    </style>
+
+    <style name="MLFont.Regular">
+        <item name="fontFamily">@font/lato_regular</item>
+    </style>
+
+    <style name="MLFont.Light">
+        <item name="fontFamily">@font/lato_light</item>
+    </style>
+
+    <style name="MLFont.Thin">
+        <item name="fontFamily">@font/lato_thin</item>
+    </style>
+
 </resources>

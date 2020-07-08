@@ -9,6 +9,7 @@ data class ProductModel(
     @SerializedName("price") val price: Double?,
     @SerializedName("currency_id") val currencyId: String?,
     @SerializedName("available_quantity") val availableQuantity: Int?,
+    @SerializedName("sold_quantity") val soldQuantity: Int?,
     @SerializedName("condition") val condition: String?,
     @SerializedName("shipping") val shipping: Shipping?,
     @SerializedName("permalink") val permalink: String?,

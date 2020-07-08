@@ -3,91 +3,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ui_meli_background"
     tools:context=".modules.product.ProductDetailFragment">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/ui_linespacing_large">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:padding="@dimen/spacing_medium"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/textViewCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
+            tools:text="New - 20 sold"
+            android:textAppearance="@style/MLFont.Thin" />
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:textSize="@dimen/ui_fontsize_large"
+            tools:text="Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)"
+            android:textAppearance="@style/MLFont.Light"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textViewOriginalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:visibility="gone"
+            tools:visibility="visible"
+            tools:text="USD 60000"
+            android:textAppearance="@style/MLFont.Thin" />
+
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_gravity="start"
+            tools:text="USD 56990"
+            android:textSize="@dimen/ui_fontsize_xlarge"
+            android:textAppearance="@style/MLFont.Regular"/>
+
+        <TextView
+            android:id="@+id/textViewAvailability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
+            tools:text="Stock"
+            android:textSize="@dimen/ui_fontsize_medium"
+            android:textAppearance="@style/MLFont.Regular" />
+
+        <TextView
+            android:id="@+id/textViewShipping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:background="@color/colorAccent"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:padding="@dimen/ui_linespacing_large"
+            android:text="@string/free_shipping"
+            android:textSize="@dimen/ui_fontsize_small"
+            android:textAppearance="@style/MLFont.Light"
+            android:textColor="@color/ui_meli_white"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/textViewMercadoPago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:background="@color/colorAccent"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:padding="@dimen/ui_linespacing_large"
+            android:text="@string/accepts_mercadopago"
+            android:textSize="@dimen/ui_fontsize_small"
+            android:textAppearance="@style/MLFont.Light"
+            android:textColor="@color/ui_meli_white"
+            tools:visibility="visible"/>
+
+        <com.mercadolibre.android.ui.widgets.MeliButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/ui_linespacing_xxlarge">
+            app:type="actionSecondary"
+            android:text="@string/open_in_app"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_large"/>
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:padding="@dimen/ui_linespacing_large"
-                android:layout_gravity="center_horizontal"/>
 
-            <TextView
-                android:id="@+id/textViewTitle"
-                android:maxLines="2"
-                android:ellipsize="end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
-                android:layout_marginStart="@dimen/ui_linespacing_large"
-                android:layout_marginEnd="@dimen/ui_linespacing_large"
-                tools:text="Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/textViewShortDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/ui_linespacing_large"
-                android:layout_marginEnd="@dimen/ui_linespacing_large"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
-                tools:text="13.3 Inch, 256 GB"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
-
-            <TextView
-                android:id="@+id/textViewMercadoPago"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/ui_linespacing_large"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
-                android:background="@color/colorAccent"
-                android:textAlignment="center"
-                android:visibility="gone"
-                android:paddingLeft="@dimen/ui_linespacing_large"
-                android:paddingRight="@dimen/ui_linespacing_large"
-                android:text="@string/accepts_mercadopago"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat"
-                android:textColor="@color/ui_meli_white"
-                tools:visibility="visible"/>
-
-            <TextView
-                android:id="@+id/textViewPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/ui_linespacing_large"
-                android:layout_marginEnd="@dimen/ui_linespacing_large"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
-                android:layout_gravity="end"
-                tools:text="USD 56990"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textViewOriginalPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginStart="@dimen/ui_linespacing_large"
-                android:layout_marginEnd="@dimen/ui_linespacing_large"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
-                tools:text="USD 60000"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 
 

@@ -29,11 +29,10 @@ class BindableProductResultView(
             viewBinding.apply {
                 imageView.setImageUrl(thumbnail.orEmpty())
                 textViewTitle.text = title.orEmpty()
-                textViewShortDesc.text = productBuilder.getDescriptionData(product, resources)
+                textViewCondition.text = productBuilder.getConditionAndSoldData(product, resources)
                 textViewPrice.text = productBuilder.getFormattedPrice(product.currencyId, product.price)
                 textViewOriginalPrice.text = productBuilder.getOriginalPriceData(product)
                 textViewOriginalPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-                textViewMercadoPago.visibility = if (acceptMercadopago == true) View.VISIBLE else View.GONE
 
                 root.setOnClickListener {
                     listener.onClickProduct(this@run)

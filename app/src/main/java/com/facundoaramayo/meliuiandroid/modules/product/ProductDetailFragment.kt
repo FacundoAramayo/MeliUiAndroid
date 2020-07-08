@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.facundoaramayo.meliuiandroid.base.EMPTY_STRING
 import com.facundoaramayo.meliuiandroid.baseui.setImageUrl
 
 import com.facundoaramayo.meliuiandroid.databinding.ProductDetailFragmentBinding
@@ -54,10 +55,23 @@ class ProductDetailFragment : Fragment() {
             binding.apply {
                 imageView.setImageUrl(it.thumbnail.orEmpty())
                 textViewTitle.text = it.title.orEmpty()
-                textViewShortDesc.text = productBuilder.getDescriptionData(it, resources)
+                textViewCondition.text = productBuilder.getConditionAndSoldData(it, resources)
                 textViewPrice.text = productBuilder.getFormattedPrice(it.currencyId, it.price)
                 textViewOriginalPrice.text = productBuilder.getOriginalPriceData(it)
                 textViewOriginalPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+                val availability = productBuilder.getAvailabilityData(it, resources)
+                if (availability == EMPTY_STRING) {
+                    textViewAvailability.visibility = View.GONE
+                } else {
+                    textViewAvailability.text = availability
+                }
+                val shipping = productBuilder.getShippingData(product?.shipping, resources)
+                if (shipping == EMPTY_STRING) {
+                    textViewShipping.visibility = View.GONE
+                } else {
+                    textViewShipping.text = shipping
+                }
+                textViewAvailability.text = productBuilder.getAvailabilityData(it, resources)
                 textViewMercadoPago.visibility = if (it.acceptMercadopago == true) View.VISIBLE else View.GONE
             }
 

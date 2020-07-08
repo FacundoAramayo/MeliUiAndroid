@@ -29,36 +29,39 @@
                 android:ellipsize="end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
-                android:layout_marginStart="@dimen/ui_linespacing_large"
-                android:layout_marginEnd="@dimen/ui_linespacing_large"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:textSize="@dimen/ui_fontsize_medium"
                 tools:text="Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textAppearance="@style/MLFont.Light"
                 android:textColor="#000000" />
 
             <TextView
-                android:id="@+id/textViewShortDesc"
+                android:id="@+id/textViewCondition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/ui_linespacing_large"
-                android:layout_marginEnd="@dimen/ui_linespacing_large"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
-                tools:text="13.3 Inch, 256 GB"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
+                tools:text="New - 20 sold"
+                android:textAppearance="@style/MLFont.Thin" />
 
             <TextView
                 android:id="@+id/textViewMercadoPago"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/ui_linespacing_large"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_large"
                 android:background="@color/colorAccent"
                 android:textAlignment="center"
-                android:paddingLeft="@dimen/ui_linespacing_large"
-                android:paddingRight="@dimen/ui_linespacing_large"
+                android:visibility="gone"
+                android:padding="@dimen/ui_linespacing_large"
                 android:text="@string/accepts_mercadopago"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat"
-                android:textColor="@color/ui_meli_white" />
+                android:textSize="@dimen/ui_fontsize_xsmall"
+                android:textAppearance="@style/MLFont.Light"
+                android:textColor="@color/ui_meli_white"
+                tools:visibility="visible"/>
 
             <TextView
                 android:id="@+id/textViewPrice"
@@ -66,22 +69,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/ui_linespacing_large"
                 android:layout_marginEnd="@dimen/ui_linespacing_large"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
+                android:layout_marginTop="@dimen/spacing_large"
                 android:layout_gravity="end"
                 tools:text="USD 56990"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:textStyle="bold" />
+                android:textSize="@dimen/ui_fontsize_large"
+                android:textAppearance="@style/MLFont.Regular" />
 
             <TextView
                 android:id="@+id/textViewOriginalPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginStart="@dimen/ui_linespacing_large"
-                android:layout_marginEnd="@dimen/ui_linespacing_large"
-                android:layout_marginTop="@dimen/ui_linespacing_large"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                tools:visibility="visible"
                 tools:text="USD 60000"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+                android:textAppearance="@style/MLFont.Thin"/>
 
         </LinearLayout>
 
