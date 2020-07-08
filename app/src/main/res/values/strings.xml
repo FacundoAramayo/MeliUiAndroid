@@ -1,20 +1,20 @@
 <resources>
     <string name="app_name">MeliUiAndroid</string>
-    <string name="title_home">Home</string>
-    <string name="title_search">Search</string>
-    <string name="title_notifications">Notifications</string>
-
+    <string name="title_home">Inicio</string>
+    <string name="title_search">Buscar</string>
+    <string name="title_notifications">Notificaciones</string>
+    <string name="product_detail">Detalle del producto</string>
 
     <!--Product description-->
-    <string name="condition_used">Used</string>
-    <string name="condition_new">New</string>
-    <string name="quantity_available">Available: %s</string>
-    <string name="stock_available">Stock available</string>
-    <string name="quantity_sold">%s solds</string>
-    <string name="free_shipping">Free shipping</string>
+    <string name="condition_used">Usado</string>
+    <string name="condition_new">Nuevo</string>
+    <string name="quantity_available">Disponible: %s</string>
+    <string name="stock_available">Stock disponible</string>
+    <string name="free_shipping">Envío gratis</string>
     <string name="original_price"><strike>%s</strike></string>
-    <string name="accepts_mercadopago">Accepts MercadoPago</string>
-    <string name="open_in_app">Open in app</string>
-    <string name="quick_access">Quick Access</string>
+    <string name="accepts_mercadopago">Acepta MercadoPago</string>
+    <string name="open_in_app">Abrir en la aplicación</string>
+    <string name="quantity_sold">%s vendidos</string>
+    <string name="quick_access">Acceso rápido</string>
 
 </resources>

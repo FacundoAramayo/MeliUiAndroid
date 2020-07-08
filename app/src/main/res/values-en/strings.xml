@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MeliUiAndroid</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="product_detail">Product detail</string>
+
+
+    <string name="condition_used">Used</string>
+    <string name="condition_new">New</string>
+    <string name="quantity_available">Available: %s</string>
+    <string name="stock_available">Stock available</string>
+    <string name="quantity_sold">%s solds</string>
+    <string name="free_shipping">Free shipping</string>
+    <string name="original_price"><strike>%s</strike></string>
+    <string name="accepts_mercadopago">Accepts MercadoPago</string>
+    <string name="open_in_app">Open in app</string>
+    <string name="quick_access">Quick Access</string>
+</resources>
