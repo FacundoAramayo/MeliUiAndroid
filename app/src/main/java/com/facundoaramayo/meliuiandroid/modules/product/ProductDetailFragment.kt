@@ -1,5 +1,6 @@
 package com.facundoaramayo.meliuiandroid.modules.product
 
+import android.graphics.Paint
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.facundoaramayo.meliuiandroid.baseui.setImageUrl
 
 import com.facundoaramayo.meliuiandroid.databinding.ProductDetailFragmentBinding
+import com.facundoaramayo.meliuiandroid.modules.product.model.ProductModel
 import com.facundoaramayo.meliuiandroid.modules.product.viewmodel.ProductDetailViewModel
 import com.facundoaramayo.meliuiandroid.modules.search.SearchFragment
 
@@ -24,6 +27,9 @@ class ProductDetailFragment : Fragment() {
 
     private var source: String? = null
 
+    private var product: ProductModel? = null
+    private val productBuilder = ProductItemBuilder.instance
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,6 +41,7 @@ class ProductDetailFragment : Fragment() {
             ViewModelProviders.of(this).get(ProductDetailViewModel::class.java)
 
         source = args.source
+        product = args.product
         initUI()
 
         return binding.root
@@ -43,6 +50,18 @@ class ProductDetailFragment : Fragment() {
     private fun initUI() {
         setHasOptionsMenu(true)
 
+        product?.let {
+            binding.apply {
+                imageView.setImageUrl(it.thumbnail.orEmpty())
+                textViewTitle.text = it.title.orEmpty()
+                textViewShortDesc.text = productBuilder.getDescriptionData(it, resources)
+                textViewPrice.text = productBuilder.getFormattedPrice(it.currencyId, it.price)
+                textViewOriginalPrice.text = productBuilder.getOriginalPriceData(it)
+                textViewOriginalPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+                textViewMercadoPago.visibility = if (it.acceptMercadopago == true) View.VISIBLE else View.GONE
+            }
+
+        } ?: showError()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -58,6 +77,10 @@ class ProductDetailFragment : Fragment() {
             else -> ProductDetailFragmentDirections.actionProductDetailFragmentToNavigationHome()
         }
         findNavController().navigate(action)
+    }
+
+    private fun showError() {
+
     }
 
     companion object {

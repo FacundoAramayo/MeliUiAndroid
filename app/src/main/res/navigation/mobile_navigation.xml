@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/productDetailFragment"
         android:name="com.facundoaramayo.meliuiandroid.modules.product.ProductDetailFragment"
-        android:label="product_detail_fragment"
+        android:label="Product Detail"
         tools:layout="@layout/product_detail_fragment" >
         <argument
             android:name="product"
