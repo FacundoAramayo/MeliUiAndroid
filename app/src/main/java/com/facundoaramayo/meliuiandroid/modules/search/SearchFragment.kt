@@ -84,6 +84,7 @@ class SearchFragment : Fragment(), BindableProductResultView.ProductClickListene
         binding.textFieldSearch.clearFocus()
         hideKeyboard()
         GlobalScope.launch(Dispatchers.Main) {
+            setLoading(true)
             val items = searchViewModel.getResults(query).body()?.results
 
             items?.let {
@@ -91,9 +92,20 @@ class SearchFragment : Fragment(), BindableProductResultView.ProductClickListene
                 productResultsAdapter.update(items.map { BindableProductResultView(it, this@SearchFragment, resources)})
             }
 
-            Log.d("LOG-", "items: $items")
+            setLoading(false)
         }
 
+    }
+
+    private fun setLoading(loading: Boolean) {
+        if (loading) {
+            binding.recyclerViewResults.visibility = View.GONE
+            binding.loading.visibility = View.VISIBLE
+        } else {
+            binding.recyclerViewResults.visibility = View.VISIBLE
+            binding.loading.visibility = View.GONE
+
+        }
     }
 
     override fun onClickProduct(product: ProductModel) {

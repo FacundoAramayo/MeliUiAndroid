@@ -65,11 +65,20 @@
         android:padding="@dimen/ui_linespacing_large"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:visibility="gone"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/lyt_search"
         app:layout_constraintBottom_toBottomOf="@id/bottom_margin"
         app:layout_constraintStart_toStartOf="@id/start_margin"
         app:layout_constraintEnd_toEndOf="@id/end_margin"
         tools:visibility="visible">
+
+        <com.mercadolibre.android.ui.widgets.MeliSpinner
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:size="large"
+            app:spinnerText="Texto de soporte de hasta dos líneas"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_results"
