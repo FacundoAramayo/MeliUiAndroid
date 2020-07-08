@@ -1,6 +1,8 @@
 package com.facundoaramayo.meliuiandroid.modules.product
 
+import android.content.Intent
 import android.graphics.Paint
+import android.net.Uri
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -73,6 +75,12 @@ class ProductDetailFragment : Fragment() {
                 }
                 textViewAvailability.text = productBuilder.getAvailabilityData(it, resources)
                 textViewMercadoPago.visibility = if (it.acceptMercadopago == true) View.VISIBLE else View.GONE
+
+                buttonOpenApp.setOnClickListener {
+                    val openURL = Intent(Intent.ACTION_VIEW)
+                    openURL.data = Uri.parse(product?.permalink)
+                    startActivity(openURL)
+                }
             }
 
         } ?: showError()

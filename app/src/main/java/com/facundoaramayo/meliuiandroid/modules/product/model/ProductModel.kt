@@ -23,4 +23,4 @@ data class Shipping(
     @SerializedName("mode") val mode: String?,
     @SerializedName("logistic_type") val logisticType: String?,
     @SerializedName("store_pick_up") val storePickUp: String?
-)
+) : Serializable
